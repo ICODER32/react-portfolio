@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
 import './App.css';
 import Home from './pages/Home';
 import Resume from './pages/Resume';
@@ -8,11 +8,14 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/resume' element={<Resume />} />
-          <Route path='/work' element={<Portfolio />} />
-        </Routes>
+        <HashRouter basename='/'>
+
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/resume' element={<Resume />} />
+            <Route path='/work' element={<Portfolio />} />
+          </Routes>
+        </HashRouter>
       </BrowserRouter>
 
       {/* <!-- Contact me --> */}
